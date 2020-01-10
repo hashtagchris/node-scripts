@@ -5,12 +5,6 @@ const octokit = new Octokit({
 });
 
 (async function() {
-  // await octokit.issues.create({
-  //   owner: 'hashtagchris',
-  //   repo: 'test-workflows',
-  //   title: `foo-bar-baz`,
-  // });
-
   for (let i = 0; i < 4; i++) {
     for (let letter = 97; letter < 123; letter++) {
       const title = `${Buffer.from([letter]).toString()}-${i}`;
