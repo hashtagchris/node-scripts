@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/hashtagchris/node-scripts#readme",
   "dependencies": {
+    "@octokit/graphql": "^4.3.1",
     "@octokit/rest": "^16.36.0",
     "dotenv": "^8.2.0",
     "request-promise-native": "^1.0.8"
