@@ -18,11 +18,12 @@
   "homepage": "https://github.com/hashtagchris/node-scripts#readme",
   "dependencies": {
     "@octokit/graphql": "^4.3.1",
-    "@octokit/rest": "^16.36.0",
+    "@octokit/rest": "^18.0.6",
     "adal-node": "^0.2.1",
     "dotenv": "^8.2.0",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.8",
-    "table": "^5.4.6"
+    "table": "^5.4.6",
+    "tweetsodium": "0.0.5"
   }
 }
