@@ -7,13 +7,16 @@ const octokit = new Octokit({
 
 (async function() {
   const labels = ['incident-repair']
+  const owner = 'github'
+  const repo = 'c2c-actions-experience'
+
   const oneDayMS = 24 * 60 * 60 * 1000
   const weeklyClosedIssues = new Object()
 
   for (let page = 1; page < 10; page++) {
     const issuesResponse = await octokit.issues.listForRepo({
-      owner: 'github',
-      repo: 'c2c-actions-experience',
+      owner,
+      repo,
       labels,
       state: 'closed',
       page,
@@ -41,12 +44,13 @@ const octokit = new Octokit({
     }
   }
 
+  console.log(`Repo: ${owner}/${repo}`)
   console.log(`Labels: ${labels}`)
   console.log()
 
   for (const week of Object.keys(weeklyClosedIssues).sort((a, b) => { return b - a})) {
     const weekDate = new Date(Number.parseInt(week))
     const weeklyIssues = weeklyClosedIssues[week].sort()
-    console.log(`${weekDate.toDateString()}: ${weeklyIssues.length} issues closed (${weeklyIssues.join(', ')})`)
+    console.log(`Week of ${weekDate.toDateString()}: ${weeklyIssues.length} issues closed (${weeklyIssues.join(', ')})`)
   }
 })();
