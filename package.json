@@ -24,6 +24,7 @@
     "request": "^2.88.2",
     "request-promise-native": "^1.0.8",
     "table": "^5.4.6",
-    "tweetsodium": "0.0.5"
+    "tweetsodium": "0.0.5",
+    "yaml": "^2.1.1"
   }
 }
